@@ -1,4 +1,9 @@
 apply plugin: 'com.android.application'
+apply plugin: 'jacoco-android'
+
+jacoco {
+    toolVersion = "0.7.9"
+}
 
 android {
     compileSdkVersion 26
@@ -16,6 +21,22 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+
+    testOptions {
+        // force to FALSE to be sure there is exception if you call android stuff without mocking
+        unitTests.returnDefaultValues = false
+        unitTests.all {
+            jacoco {
+                includeNoLocationClasses = true
+            }
+        }
+    }
+    jacocoAndroidUnitTestReport {
+        csv.enabled false
+        html.enabled true
+        xml.enabled true
     }
 }
 
