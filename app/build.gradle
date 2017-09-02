@@ -10,20 +10,33 @@ jacoco {
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.0"
+    buildToolsVersion "26.0.1"
     defaultConfig {
         applicationId "com.alessandrocandolini.currency_converter"
         minSdkVersion 17
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
+        multiDexEnabled false
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
-        release {
+
+        debug {
+            debuggable true
             minifyEnabled false
+            shrinkResources false
+            testCoverageEnabled true
+        }
+
+        release {
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
+            testCoverageEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+
     }
 
 
@@ -36,6 +49,7 @@ android {
             }
         }
     }
+    
     jacocoAndroidUnitTestReport {
         csv.enabled false
         html.enabled true
@@ -48,7 +62,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:26.+'
+    compile "com.android.support:appcompat-v7:26.0.2"
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
 
     // https://mvnrepository.com/artifact/junit/junit
