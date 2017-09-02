@@ -49,7 +49,21 @@ android {
             }
         }
     }
-    
+
+    lintOptions {
+        htmlReport true
+        xmlReport true
+        showAll true
+        abortOnError false
+        warningsAsErrors true
+        quiet false
+        ignoreWarnings false
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
     jacocoAndroidUnitTestReport {
         csv.enabled false
         html.enabled true
