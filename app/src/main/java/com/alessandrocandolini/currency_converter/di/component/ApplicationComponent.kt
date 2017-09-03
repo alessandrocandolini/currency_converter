@@ -8,12 +8,8 @@ import javax.inject.Singleton
  * Created by alessandro.candolini on 03/09/2017.
  */
 
-@Singleton // sigleton by "definition" (hosted in Application class)
+@Singleton // singleton by "definition" (hosted in Application class)
 @Component(modules = arrayOf(
         ApplicationModule::class
 ))
-interface ApplicationComponent {
-
-
-
-}
+interface ApplicationComponent
