@@ -16,6 +16,6 @@ class ApplicationModule(private val application : Application) {
     fun provideApplication() : Application = application
 
     @Provides
-    fun provideApplicationContext() : Context = application
+    fun provideApplicationContext() : Context = application.applicationContext
 
 }

@@ -1,6 +1,9 @@
 package com.alessandrocandolini.currency_converter.di.component
 
 import com.alessandrocandolini.currency_converter.di.module.ApplicationModule
+import com.alessandrocandolini.currency_converter.di.module.NetworkModule
+import com.alessandrocandolini.currency_converter.di.module.RetrofitModule
+import com.alessandrocandolini.currency_converter.di.module.SerializationModule
 import dagger.Component
 import javax.inject.Singleton
 
@@ -10,6 +13,9 @@ import javax.inject.Singleton
 
 @Singleton // singleton by "definition" (hosted in Application class)
 @Component(modules = arrayOf(
-        ApplicationModule::class
+        ApplicationModule::class,
+        NetworkModule::class,
+        RetrofitModule::class,
+        SerializationModule::class
 ))
 interface ApplicationComponent
