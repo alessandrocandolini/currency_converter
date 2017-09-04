@@ -88,9 +88,15 @@ dependencies {
     compile "com.android.support:appcompat-v7:26.0.2"
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
 
+    // Junit 4
     // https://mvnrepository.com/artifact/junit/junit
     testCompile group: 'junit', name: 'junit', version: '4.12'
 
+    // Mockito
+    // https://mvnrepository.com/artifact/org.mockito/mockito-core
+    testCompile group: 'org.mockito', name: 'mockito-core', version: '2.9.0'
+
+    // Kotlin
     // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-stdlib-jre7
     compile group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib-jre7', version: "$kotlin_version"
 
