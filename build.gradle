@@ -14,6 +14,11 @@ buildscript {
         // kotlin
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
+        // dokka
+        // https://mvnrepository.com/artifact/org.jetbrains.dokka/dokka-gradle-plugin
+        classpath group: 'org.jetbrains.dokka', name: 'dokka-gradle-plugin', version: '0.9.15'
+
+
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }

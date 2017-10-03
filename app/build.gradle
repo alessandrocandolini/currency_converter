@@ -3,9 +3,15 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'jacoco-android'
+apply plugin: 'org.jetbrains.dokka'
 
 jacoco {
     toolVersion = "0.7.9"
+}
+
+dokka {
+    outputFormat = 'html'
+    outputDirectory = "$buildDir/javadoc"
 }
 
 android {
@@ -77,6 +83,8 @@ android {
                       '**/*_*Factory.class'
         ]
     }
+
+
 }
 
 dependencies {
@@ -108,6 +116,15 @@ dependencies {
     compile group: 'com.google.dagger', name: 'dagger-android-support', version: "$DAGGER_VERSION"
     kapt group: 'com.google.dagger', name: 'dagger-android-processor', version: "$DAGGER_VERSION"
 
+    // RxJava
+    // https://mvnrepository.com/artifact/io.reactivex.rxjava2/rxjava
+    compile group: 'io.reactivex.rxjava2', name: 'rxjava', version: '2.1.3'
+
+    // https://mvnrepository.com/artifact/io.reactivex.rxjava2/rxandroid
+    compile group: 'io.reactivex.rxjava2', name: 'rxandroid', version: '2.0.1'
+
+    // https://mvnrepository.com/artifact/com.jakewharton.rxbinding2/rxbinding
+    compile group: 'com.jakewharton.rxbinding2', name: 'rxbinding', version: '2.0.0'
 
 
 }

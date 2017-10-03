@@ -13,7 +13,7 @@ class MoneyTest {
     fun test_WhenTheyAreTheSame_MustBeEqual() {
 
         // given
-        val fakeMoney = Money(BigDecimal.ONE,Currency.EUR)
+        val fakeMoney = Money(BigDecimal.ONE, Currency.EUR)
 
         // then
         Assert.assertEquals(fakeMoney,fakeMoney)
@@ -24,8 +24,8 @@ class MoneyTest {
     fun test_WhenTheyShareSameCurrencyAndValueAndScala_MustBeEqual() {
 
         // given
-        val fakeMoney1 = Money(BigDecimal.valueOf(1),Currency.EUR)
-        val fakeMoney2 = Money(BigDecimal.valueOf(1),Currency.EUR)
+        val fakeMoney1 = Money(BigDecimal.valueOf(1), Currency.EUR)
+        val fakeMoney2 = Money(BigDecimal.valueOf(1), Currency.EUR)
 
         // then
         Assert.assertEquals(fakeMoney1,fakeMoney2)
@@ -36,8 +36,8 @@ class MoneyTest {
     fun test_WhenTheyShareSameCurrencyAndValueButNotScale_MustBeEqual() {
 
         // given
-        val fakeMoney1 = Money(BigDecimal.valueOf(1),Currency.EUR)
-        val fakeMoney2 = Money(BigDecimal.valueOf(1.00),Currency.EUR)
+        val fakeMoney1 = Money(BigDecimal.valueOf(1), Currency.EUR)
+        val fakeMoney2 = Money(BigDecimal.valueOf(1.00), Currency.EUR)
 
         // then
         Assert.assertEquals(fakeMoney1,fakeMoney2)
@@ -47,7 +47,7 @@ class MoneyTest {
     fun test_WhenDifferentTypes_MustBeDifferent() {
 
         // given
-        val fakeMoney1 = Money(BigDecimal.valueOf(1),Currency.EUR)
+        val fakeMoney1 = Money(BigDecimal.valueOf(1), Currency.EUR)
         val fakeMoney2 = "dejuewg"
 
         // then
@@ -59,8 +59,8 @@ class MoneyTest {
     fun test_WhenDifferentValue_MustBeDifferent() {
 
         // given
-        val fakeMoney1 = Money(BigDecimal.valueOf(1),Currency.EUR)
-        val fakeMoney2 = Money(BigDecimal.valueOf(2),Currency.EUR)
+        val fakeMoney1 = Money(BigDecimal.valueOf(1), Currency.EUR)
+        val fakeMoney2 = Money(BigDecimal.valueOf(2), Currency.EUR)
 
         // then
         Assert.assertNotSame(fakeMoney1,fakeMoney2)
@@ -70,8 +70,8 @@ class MoneyTest {
     fun test_WhenDifferentCurrency_MustBeDifferent() {
 
         // given
-        val fakeMoney1 = Money(BigDecimal.valueOf(1),Currency.EUR)
-        val fakeMoney2 = Money(BigDecimal.valueOf(1),Currency.USD)
+        val fakeMoney1 = Money(BigDecimal.valueOf(1), Currency.EUR)
+        val fakeMoney2 = Money(BigDecimal.valueOf(1), Currency.USD)
 
         // then
         Assert.assertNotSame(fakeMoney1,fakeMoney2)
@@ -82,7 +82,7 @@ class MoneyTest {
 
         // given
         val list : MutableCollection<Money> = hashSetOf()
-        val fakeMoney1 = Money(BigDecimal.valueOf(1),Currency.EUR)
+        val fakeMoney1 = Money(BigDecimal.valueOf(1), Currency.EUR)
 
         // when
         list.add(fakeMoney1)
@@ -97,8 +97,8 @@ class MoneyTest {
 
         // given
         val collection : MutableCollection<Money> = hashSetOf()
-        val fakeMoney1 = Money(BigDecimal.valueOf(1),Currency.EUR)
-        val fakeMoney2 = Money(BigDecimal.valueOf(1),Currency.EUR)
+        val fakeMoney1 = Money(BigDecimal.valueOf(1), Currency.EUR)
+        val fakeMoney2 = Money(BigDecimal.valueOf(1), Currency.EUR)
 
         // when
         collection.add(fakeMoney1)
@@ -115,8 +115,8 @@ class MoneyTest {
 
         // given
         val collection : MutableCollection<Money> = hashSetOf()
-        val fakeMoney1 = Money(BigDecimal.valueOf(1),Currency.EUR)
-        val fakeMoney2 = Money(BigDecimal.valueOf(1.00),Currency.EUR)
+        val fakeMoney1 = Money(BigDecimal.valueOf(1), Currency.EUR)
+        val fakeMoney2 = Money(BigDecimal.valueOf(1.00), Currency.EUR)
 
         // when
         collection.add(fakeMoney1)
@@ -131,8 +131,8 @@ class MoneyTest {
 
         // given
         val collection : MutableCollection<Money> = hashSetOf()
-        val fakeMoney1 = Money(BigDecimal.valueOf(1),Currency.EUR)
-        val fakeMoney2 = Money(BigDecimal.valueOf(1.00),Currency.USD)
+        val fakeMoney1 = Money(BigDecimal.valueOf(1), Currency.EUR)
+        val fakeMoney2 = Money(BigDecimal.valueOf(1.00), Currency.USD)
 
         // when
         collection.add(fakeMoney1)
@@ -147,8 +147,8 @@ class MoneyTest {
 
         // given
         val collection : MutableCollection<Money> = hashSetOf()
-        val fakeMoney1 = Money(BigDecimal.valueOf(1),Currency.EUR)
-        val fakeMoney2 = Money(BigDecimal.valueOf(2),Currency.EUR)
+        val fakeMoney1 = Money(BigDecimal.valueOf(1), Currency.EUR)
+        val fakeMoney2 = Money(BigDecimal.valueOf(2), Currency.EUR)
 
         // when
         collection.add(fakeMoney1)
